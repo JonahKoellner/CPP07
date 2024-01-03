@@ -6,12 +6,12 @@
 #    By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 20:28:05 by jonahkollne       #+#    #+#              #
-#    Updated: 2024/01/03 13:55:03 by jkollner         ###   ########.fr        #
+#    Updated: 2024/01/03 14:18:32 by jkollner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-name = Indentify
+name = whatever
 cc = c++
 cflags = -Wall -Werror -Wextra -std=c++98
 src = main.cpp
