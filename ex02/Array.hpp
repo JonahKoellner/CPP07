@@ -6,11 +6,12 @@
 /*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:09:22 by jkollner          #+#    #+#             */
-/*   Updated: 2024/01/03 17:40:42 by jkollner         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:39:31 by jkollner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <exception>
+//#include <exception>
+#include <stdexcept>
 
 template <typename T>
 class Array {
@@ -19,8 +20,8 @@ class Array {
 		unsigned int _size;
 	public:
 		Array() {
-			this->_array = new T[0];
-			this->_size = 1;
+			this->_array = nullptr;
+			this->_size = 0;
 		}
 		Array( unsigned int n ) {
 			this->_array = new T[n];
@@ -46,7 +47,7 @@ class Array {
 		}
 		T &operator[](unsigned int i) {
 			if (i >= this->_size) {
-				throw std::exception();
+				throw std::out_of_range("Index out of range");
 			}
 			return (this->_array[i]);
 		}
