@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:09:31 by jkollner          #+#    #+#             */
-/*   Updated: 2024/01/04 17:45:50 by jkollner         ###   ########.fr       */
+/*   Updated: 2024/02/27 17:16:01 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,19 @@ void printArray(Array<T> &a) {
 }
 
 int main ( void ) {
-	Array<int> * a = new Array<int>(5);
-	Array<int> * b = new Array<int>(5);
+	Array<int> * a = new Array<int>(4);
+	Array<int> * b = new Array<int>(3);
 	Array<int> * c = new Array<int>();
 	printArray(*a);
 	(*b)[2] = 3;
-	//printArray(*b);
-	//(*b)[7] = 3;
 	printArray(*b);
-	(*a)[2] = 6;
+	try{
+		(*b)[7] = 3;
+	} catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
+	printArray(*b);
+	(*a)[1] = 6;
 	printArray(*a);
 	*a = *b;
 	printArray(*a);
