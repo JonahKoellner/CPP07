@@ -6,7 +6,7 @@
 /*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:09:31 by jkollner          #+#    #+#             */
-/*   Updated: 2024/02/27 17:16:01 by jonahkollne      ###   ########.fr       */
+/*   Updated: 2024/03/05 16:28:32 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,31 @@ void printArray(Array<T> &a) {
 }
 
 int main ( void ) {
-	Array<int> * a = new Array<int>(4);
-	Array<int> * b = new Array<int>(3);
-	Array<int> * c = new Array<int>();
-	printArray(*a);
-	(*b)[2] = 3;
-	printArray(*b);
+	Array<int> a(4);
+	Array<int> b(3);
+	Array<int> c;
+	Array<int> *test = new Array<int>(5);
+	printArray(a);
+	b[2] = 3;
+	printArray(b);
 	try{
-		(*b)[7] = 3;
+		b[7] = 3;
 	} catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
-	printArray(*b);
-	(*a)[1] = 6;
-	printArray(*a);
-	*a = *b;
-	printArray(*a);
-	(*a)[2] = 4;
-	printArray(*b);
-	printArray(*a);
-	printArray(*c);
+	printArray(b);
+	a[1] = 6;
+	printArray(a);
+	a = b;
+	printArray(a);
+	a[2] = 4;
+	printArray(b);
+	printArray(a);
+	printArray(c);
 
+	printArray(*test);
+	(*test)[2] = 20;
+	printArray(*test);
 	return (0);
 
 }

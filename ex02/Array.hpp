@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkollner <jkollner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jonahkollner <jonahkollner@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:09:22 by jkollner          #+#    #+#             */
-/*   Updated: 2024/01/04 17:39:31 by jkollner         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:00:39 by jonahkollne      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Array {
 		unsigned int _size;
 	public:
 		Array() {
-			this->_array = nullptr;
+			this->_array = new T();
 			this->_size = 0;
 		}
 		Array( unsigned int n ) {
